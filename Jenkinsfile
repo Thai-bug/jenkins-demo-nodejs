@@ -6,5 +6,14 @@ pipeline{
         git 'https://github.com/Thai-bug/jenkins-demo-nodejs.git'
       }
     }
+
+    stage('Pull'){
+      steps{
+        withDockerRegistry(credentialsId: 'moleculer-demo', url: 'https://index.docker.io/v1/') {
+          sh 'docker build -t xuanthai1202/moleculer-demo:v1'
+          sh 'docker push xuanthai1202/moleculer-demo:1'
+      }
+      }
+    }
   }
 }
