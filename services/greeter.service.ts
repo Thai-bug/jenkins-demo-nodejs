@@ -39,12 +39,12 @@ export default class GreeterService extends Service {
 				goodBye:{
 					rest: "/goodBye",
 					params: {
-						name:"string"
+						name:"string",
 					},
 					async handler(ctx: Context<{name: string}>): Promise<string> {
 						return `GoodBye, ${ctx.params.name}`;
-					}
-				}
+					},
+				},
 			},
 		});
 	}
